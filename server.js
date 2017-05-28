@@ -6,6 +6,7 @@ var express = require('express'),
     bodyParser = require('body-parser');
 
 let config = require('./webpack.config');
+let api = require('./src/server/api')
 
 let compiler = webpack(config)
 let hotMiddlewareInstance = webpackDevMiddleware(compiler)
@@ -29,6 +30,7 @@ app.use(bodyParser.json());
 // Used for production build
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.post('/talktome', api);
 app.all('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
