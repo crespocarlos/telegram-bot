@@ -13,7 +13,6 @@
     "axios": "^0.16.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "loadash": "0.0.1",
     "lodash": "^4.17.4",
     "mongoose": "^4.10.4",
     "prop-types": "^15.5.10",
