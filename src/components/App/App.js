@@ -5,8 +5,9 @@ import {blue500, blue700, blue100, pink400} from 'material-ui/styles/colors';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import AppBar from 'material-ui/AppBar';   
 import PropTypes from 'prop-types';
-import MessageBox from '../MessageBox'; 
-import MessageList from '../MessageList';
+import RouteHandler from 'react-router';
+
+require('./app.scss');
 
 injectTapEventPlugin();
 
@@ -38,10 +39,7 @@ class App extends React.Component {
       return(
         <div className="app">
           <AppBar title="Telegram bot" />
-            <div>
-              <MessageList />
-            </div>
-          <MessageBox />
+          {this.props.children}
         </div>
     )
   }

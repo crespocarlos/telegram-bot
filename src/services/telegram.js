@@ -6,14 +6,13 @@ export default class Telegram {
   _request(endpoint, args) {
 
     var http = axios.create({
-      baseURL: 'https://api.telegram.org/bot/387828909:AAGp5QdjcaCjV8mOh26CmqCoo2uk-mafGUo',
+      baseURL: 'https://api.telegram.org/bot387828909:AAGp5QdjcaCjV8mOh26CmqCoo2uk-mafGUo/',
     });
 
-    return axio.get(endpoint, args);
-  }
+    return http.post(endpoint, args);
 
-  getMe() {
-    this._request('/getMe');
+    // curl -F "url=https://telegram-bot-teaeueivjx.now.sh/talktome"  https://api.telegram.org/bot387828909:AAGp5QdjcaCjV8mOh26CmqCoo2uk-mafGUo/setWebhook
+    
   }
 
   sendMessage(chatId, text) {
@@ -23,9 +22,5 @@ export default class Telegram {
     };
 
     return this._request('/sendMessage', args);
-  }
-
-  getUpdates() {
-    return this._request('/getUpdates');
   }
 }
