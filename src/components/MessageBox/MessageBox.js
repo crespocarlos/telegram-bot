@@ -1,5 +1,4 @@
 import React from 'react';
-import Card from 'material-ui/Card';
 import trim from 'trim';
 import io from 'socket.io-client';
 import Chat from '../../services/chat'
@@ -52,14 +51,14 @@ class MessageBox extends React.Component {
 
   render() {
     return(
-      <Card className="messagebox-card">
+      <div className="messagebox-card">
           <textarea 
             className="messagebox-card__text" 
             value={this.state.message} 
             onChange={this.onChange.bind(this)} 
             onKeyUp={this.onKeyUp.bind(this)}>
           </textarea>
-      </Card>
+      </div>
     )
   }
 }

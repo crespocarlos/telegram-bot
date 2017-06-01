@@ -1,7 +1,5 @@
 import React from 'react';
 import Message from '../Message';
-import Card from 'material-ui/Card';
-import List from 'material-ui/List';
 import io from 'socket.io-client';
 import _ from 'lodash';
 
@@ -40,18 +38,18 @@ class MessageList extends React.Component {
   render() {
     let messageComponents = _.values(this.state.messages).map(message => {
         return(
-          <div className={"message-list__item" + (this.props.user == message.from.username ? '--left': '--right')} key={message.message_id}>
+          <div className={"message-list__item" + (this.state.user == message.from.username ? '--left': '--right')} key={message.message_id}>
             <Message message={message.text} />
           </div>
         );
     });
 
     return (
-      <Card className="message-list">
-        <List>
+      <div className="message-list">
+        <div>
             {messageComponents}
-        </List>
-      </Card>
+        </div>
+      </div>
     )
   }
 }

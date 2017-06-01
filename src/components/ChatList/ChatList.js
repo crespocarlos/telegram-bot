@@ -1,7 +1,5 @@
 import React from 'react';
 import Chat from '../Chat'
-import Card from 'material-ui/Card';
-import List from 'material-ui/List';
 import io from 'socket.io-client';
 
 require('./chat-list.scss');
@@ -32,12 +30,12 @@ class ChatList extends React.Component {
   render() {
     if(!this.state.users.length){
       return(
-        <Card className="chat-list-card--empty">
+        <div className="chat-list-card--empty">
           <div>
             Nobody yet
           </div>
             
-        </Card>
+        </div>
       )
     }
 
@@ -51,11 +49,11 @@ class ChatList extends React.Component {
     });
 
     return (
-      <Card className="chat-list-card">
-        <List>
+      <div className="chat-list-card">
+        <div>
           {chatNodes}
-        </List>
-      </Card>
+        </div>
+      </div>
     )
   }
 }

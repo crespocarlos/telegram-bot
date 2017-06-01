@@ -1,5 +1,4 @@
 import React from 'react';
-import {ListItem} from 'material-ui/List';
 import {Link} from 'react-router';
 
 class Chat extends React.Component {
@@ -9,10 +8,10 @@ class Chat extends React.Component {
 
   render() {
     return(
-      <ListItem
+      <div
         containerElement={<Link to={'/chat/' + this.props.user} /> }>
         {this.props.user} 
-      </ListItem>
+      </div>
     )
   }
 }
