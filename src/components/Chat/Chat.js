@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {Panel} from 'react-bootstrap';
 
 class Chat extends React.Component {
   constructor(props) {
@@ -8,10 +9,11 @@ class Chat extends React.Component {
 
   render() {
     return(
-      <div
-        containerElement={<Link to={'/chat/' + this.props.user} /> }>
+      <Panel>
+        <Link to={'/chat/' + this.props.user}>
         {this.props.user} 
-      </div>
+        </Link>
+      </Panel>
     )
   }
 }

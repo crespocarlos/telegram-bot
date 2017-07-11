@@ -4,6 +4,7 @@ import App from './components/App';
 import Home from './components/Home';
 import {Router, Route, Link, browserHistory } from 'react-router';
 import PropTypes from 'prop-types';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
 <Router history={browserHistory}>

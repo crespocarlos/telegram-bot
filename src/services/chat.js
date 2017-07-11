@@ -24,7 +24,6 @@ export default class Chat {
     
     })
     .catch(err => {
-      // ...and here if it was not
       console.log('Error :', err)
 
       if (res) {

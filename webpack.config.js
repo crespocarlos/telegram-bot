@@ -25,18 +25,29 @@ export default {
             loaders: ['react-hot-loader', 'babel-loader']
         },
         {
-            test: /\.scss$/,
-            include: path.join(__dirname,'src'),
+            test: /\.(scss|css)$/,
             loader: 'style-loader!css-loader!sass-loader'
+        },
+        { 
+            test: /\.png$/, 
+            loader: "url-loader?limit=100000" 
+        },
+        { 
+            test: /\.jpg$/, 
+            loader: "file-loader" 
+        },
+        {
+            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
+            loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
         },
         {
             test: /\.(woff2?|ttf|eot|svg)$/,
-            loader: 'url?limit=10000'
+            loader: 'url-loader?limit=10000'
         }
       ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ]
 };

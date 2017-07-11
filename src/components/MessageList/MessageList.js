@@ -2,6 +2,7 @@ import React from 'react';
 import Message from '../Message';
 import io from 'socket.io-client';
 import _ from 'lodash';
+import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 require('./message-list.scss');
 
@@ -45,11 +46,11 @@ class MessageList extends React.Component {
     });
 
     return (
-      <div className="message-list">
-        <div>
+      <ListGroup componentClass="div" bsClass="message-list">
+        <ListGroupItem>
             {messageComponents}
-        </div>
-      </div>
+        </ListGroupItem>
+      </ListGroup>
     )
   }
 }

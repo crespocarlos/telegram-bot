@@ -2,6 +2,7 @@ import React from 'react';
 import trim from 'trim';
 import io from 'socket.io-client';
 import Chat from '../../services/chat'
+import {Panel} from 'react-bootstrap';
 
 require('./message-box.scss');
 
@@ -51,14 +52,14 @@ class MessageBox extends React.Component {
 
   render() {
     return(
-      <div className="messagebox-card">
+      <Panel className="messagebox-card">
           <textarea 
             className="messagebox-card__text" 
             value={this.state.message} 
             onChange={this.onChange.bind(this)} 
             onKeyUp={this.onKeyUp.bind(this)}>
           </textarea>
-      </div>
+      </Panel>
     )
   }
 }

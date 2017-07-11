@@ -1,6 +1,7 @@
 import React from 'react';
 import Chat from '../Chat'
 import io from 'socket.io-client';
+import {ListGroup, ListGroupItem} from 'react-bootstrap'
 
 require('./chat-list.scss');
 
@@ -30,12 +31,12 @@ class ChatList extends React.Component {
   render() {
     if(!this.state.users.length){
       return(
-        <div className="chat-list-card--empty">
-          <div>
+        <ListGroup componentClass="div" bsClass="chat-list-card--empty">
+          <ListGroupItem bsStyle="success">
             Nobody yet
-          </div>
+          </ListGroupItem>
             
-        </div>
+        </ListGroup>
       )
     }
 
@@ -49,11 +50,11 @@ class ChatList extends React.Component {
     });
 
     return (
-      <div className="chat-list-card">
-        <div>
+      <ListGroup componentClass="div" bsClass="chat-list-card">
+        <ListGroupItem bsStyle="success">
           {chatNodes}
-        </div>
-      </div>
+        </ListGroupItem>
+      </ListGroup>
     )
   }
 }
